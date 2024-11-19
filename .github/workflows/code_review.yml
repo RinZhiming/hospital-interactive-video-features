@@ -1,0 +1,27 @@
+name: AI Code Review
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  code_review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: AI Code Review
+        uses: 
+          RinZhiming/your-ai-code-review-action@version
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          OPENAI_API_MODEL: "gpt-4o"
