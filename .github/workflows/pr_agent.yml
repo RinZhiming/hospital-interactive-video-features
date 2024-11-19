@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: AI Code Review
         uses: Codium-ai/pr-agent@main
         with:
-          openai_api_key: ${{ secrets.OPENAI_KEY }}
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
