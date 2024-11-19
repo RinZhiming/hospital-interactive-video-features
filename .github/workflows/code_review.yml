@@ -18,9 +18,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: AI Code Review
+      - name: AI Code Reviewer
         uses: 
-          RinZhiming/your-ai-code-review-action@version
+          RinZhiming/ai-code-reviewer@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
